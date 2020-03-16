@@ -1,0 +1,3 @@
+com\sykean\springcloud\service\PaymentFeignService.class
+com\sykean\springcloud\ConsumerOrderFeignApplication.class
+com\sykean\springcloud\controller\ConsumerFeignController.class
