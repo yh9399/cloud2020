@@ -1,0 +1,33 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          #uri:  git@github.com/yh9399/cloud2020.git
+          uri: https://github.com/yh9399/cloud2020.git
+          search-paths:
+            - cloud2020
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:7001/eureka
+#配置rabbitmq信息,15762是web管理界面的端口，5672是mq访问的端口
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh' #bus-refresh是我们引入的pom中actuator刷新操作
+
+
